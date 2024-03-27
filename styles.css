@@ -1,10 +1,38 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: Consolas, monaco, monospace;
+}
+
+html {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
 }
 
 body {
   font-family: Consolas, monaco, monospace;
+  margin-bottom: 100px;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  padding: 1em 2.5em;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+button:hover {
+  filter: brightness(90%);
 }
 
 .header {
@@ -22,6 +50,74 @@ body {
   margin-top: 2em;
 }
 
+dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #ccc;
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(190, 190, 190, 0.1);
+  text-align: center;
+}
+
+dialog > .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.form > div > input {
+  font-size: 1.5rem;
+  padding: 0.2em;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.form > .btns {
+  display: flex;
+  gap: 20px;
+}
+
+.btns > .submit-button {
+  background-color: rgb(158 253 155);
+}
+
+#isRead {
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.books-container {
+  margin: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+}
+
+.book-card {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 1.5em;
+  border: 2px solid #f0f0f0;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1.5rem;
+  min-width: 70%;
+}
+
 .content > .add-button {
   font-size: 1.5rem;
   padding: 15px 40px;
@@ -29,8 +125,24 @@ body {
   border-radius: 10px;
   border: none;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  margin: 50px 0;
 }
 
-.add-button:hover {
-  background-color: #9c9c9c;
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  line-height: 1;
+}
+
+#github-icon {
+  color: #000000;
+  vertical-align: middle;
 }

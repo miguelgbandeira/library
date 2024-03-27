@@ -12,28 +12,59 @@
       <dialog>
         <form class="form">
           <div>
-            <label for="book-title">Book Title</label>
-            <input type="text" name="book-title" id="book-title" />
+            <input
+              type="text"
+              name="book-title"
+              id="book-title"
+              placeholder="Title"
+            />
           </div>
           <div>
-            <label for="book-author">Author</label>
-            <input type="text" name="book-author" id="book-author" />
+            <input
+              type="text"
+              name="book-author"
+              id="book-author"
+              placeholder="Author"
+            />
           </div>
           <div>
-            <label for="book-pages">Number of Pages</label>
-            <input type="number" name="book-pages" id="book-pages" />
+            <input
+              type="number"
+              name="book-pages"
+              id="book-pages"
+              placeholder="Number of pages"
+            />
           </div>
-          <div>
-            <input type="checkbox" id="isRead" name="isRead" value="isRead" />
+          <div class="checkbox-container">
             <label for="isRead">Have you read it?</label>
+            <input type="checkbox" id="isRead" name="isRead" value="isRead" />
           </div>
-          <button type="submit" class="submit-button">Add</button>
-          <button type="button" class="close-button">Close</button>
+
+          <div class="btns">
+            <button type="submit" class="submit-button">Add</button>
+            <button type="button" class="close-button">Close</button>
+          </div>
         </form>
       </dialog>
       <button class="add-button">Add book</button>
-      <ul class="books"></ul>
+      <div class="books-container">
+        <ul class="books"></ul>
+      </div>
+    </div>
+    <div class="footer">
+      Copyright © 2024 miguelgbandeira
+      <a href="https://github.com/miguelgbandeira/calculator" target="_blank">
+        <ion-icon id="github-icon" name="logo-github"></ion-icon>
+      </a>
     </div>
     <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>

@@ -1,10 +1,10 @@
 const myLibrary = [];
-const ulBooks = document.querySelector(".books");
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector(".add-button");
 const closeButton = document.querySelector(".close-button");
 const submitButton = document.querySelector(".submit-button");
 const form = document.querySelector(".form");
+const booksContainer = document.querySelector(".books-container");
 
 form.addEventListener("submit", handleSubmit);
 
@@ -48,8 +48,6 @@ function addBookToLibrary(title, author, nPages, isRead) {
 }
 
 function createBookCard(book, index) {
-  const li = document.createElement("li");
-  li.classList.add("book");
   const div = document.createElement("div");
   div.classList.add("book-card");
   const h3 = document.createElement("h3");
@@ -57,18 +55,20 @@ function createBookCard(book, index) {
   const pAuthor = document.createElement("p");
   pAuthor.textContent = book.author;
   const nPages = document.createElement("p");
-  nPages.textContent = book.nPages;
-  const isRead = document.createElement("p");
-  isRead.textContent = book.isRead;
+  nPages.textContent = `${book.nPages} pages`;
   const deleteButton = document.createElement("button");
 
   const readButton = document.createElement("button");
   readButton.textContent = book.isRead ? "Read" : "Not Read";
-  readButton.style.backgroundColor = book.isRead ? "green" : "red";
+  readButton.style.backgroundColor = book.isRead
+    ? "rgb(159 255 156)"
+    : "rgb(255 156 155)";
   readButton.addEventListener("click", function () {
     myLibrary[index].isRead = !myLibrary[index].isRead;
     this.textContent = myLibrary[index].isRead ? "Read" : "Not Read";
-    this.style.backgroundColor = myLibrary[index].isRead ? "green" : "red";
+    this.style.backgroundColor = myLibrary[index].isRead
+      ? "rgb(159 255 156)"
+      : "rgb(255 156 155)";
   });
 
   deleteButton.textContent = "Delete";
@@ -79,15 +79,13 @@ function createBookCard(book, index) {
   div.appendChild(h3);
   div.appendChild(pAuthor);
   div.appendChild(nPages);
-  div.appendChild(isRead);
   div.appendChild(readButton);
   div.appendChild(deleteButton);
-  li.appendChild(div);
-  ulBooks.appendChild(li);
+  booksContainer.appendChild(div);
 }
 
 function displayBooks() {
-  ulBooks.textContent = "";
+  booksContainer.textContent = "";
   myLibrary.forEach((book, index) => {
     createBookCard(book, index);
   });
