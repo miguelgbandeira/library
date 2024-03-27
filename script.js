@@ -46,7 +46,7 @@ function addBookToLibrary(title, author, nPages, isRead) {
   myLibrary.push(book);
 }
 
-function createBookCard(book) {
+function createBookCard(book, index) {
   const li = document.createElement("li");
   li.classList.add("book");
   const div = document.createElement("div");
@@ -62,7 +62,7 @@ function createBookCard(book) {
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
   deleteButton.addEventListener("click", () => {
-    myLibrary.splice(book.index, 1);
+    myLibrary.splice(index, 1);
     displayBooks();
   });
   div.appendChild(h3);
@@ -76,7 +76,7 @@ function createBookCard(book) {
 
 function displayBooks() {
   ulBooks.textContent = "";
-  myLibrary.forEach((book) => {
-    createBookCard(book);
+  myLibrary.forEach((book, index) => {
+    createBookCard(book, index);
   });
 }
