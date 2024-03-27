@@ -61,6 +61,16 @@ function createBookCard(book, index) {
   const isRead = document.createElement("p");
   isRead.textContent = book.isRead;
   const deleteButton = document.createElement("button");
+
+  const readButton = document.createElement("button");
+  readButton.textContent = book.isRead ? "Read" : "Not Read";
+  readButton.style.backgroundColor = book.isRead ? "green" : "red";
+  readButton.addEventListener("click", function () {
+    myLibrary[index].isRead = !myLibrary[index].isRead;
+    this.textContent = myLibrary[index].isRead ? "Read" : "Not Read";
+    this.style.backgroundColor = myLibrary[index].isRead ? "green" : "red";
+  });
+
   deleteButton.textContent = "Delete";
   deleteButton.addEventListener("click", () => {
     myLibrary.splice(index, 1);
@@ -70,6 +80,7 @@ function createBookCard(book, index) {
   div.appendChild(pAuthor);
   div.appendChild(nPages);
   div.appendChild(isRead);
+  div.appendChild(readButton);
   div.appendChild(deleteButton);
   li.appendChild(div);
   ulBooks.appendChild(li);
