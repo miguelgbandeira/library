@@ -29,6 +29,7 @@ showButton.addEventListener("click", () => {
 });
 
 closeButton.addEventListener("click", () => {
+  form.reset();
   dialog.close();
 });
 
