@@ -9,10 +9,28 @@
   <body>
     <div class="content">
       <dialog>
-        <button autofocus>Close</button>
-        <p>Test</p>
+        <form class="form">
+          <div>
+            <label for="book-title">Book Title</label>
+            <input type="text" name="book-title" id="book-title" />
+          </div>
+          <div>
+            <label for="book-author">Author</label>
+            <input type="text" name="book-author" id="book-author" />
+          </div>
+          <div>
+            <label for="book-pages">Number of Pages</label>
+            <input type="number" name="book-pages" id="book-pages" />
+          </div>
+          <div>
+            <input type="checkbox" id="isRead" name="isRead" value="isRead" />
+            <label for="isRead">Have you read it?</label>
+          </div>
+          <button type="submit" class="submit-button">Add</button>
+          <button class="close-button">Close</button>
+        </form>
       </dialog>
-      <button class="btn">Add book</button>
+      <button class="add-button">Add book</button>
       <ul class="books"></ul>
     </div>
     <script src="script.js"></script>
