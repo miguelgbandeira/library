@@ -146,3 +146,14 @@ dialog > .form {
   color: #000000;
   vertical-align: middle;
 }
+
+@media screen and (max-width: 768px) {
+  .book-card {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.7rem;
+  }
+}
